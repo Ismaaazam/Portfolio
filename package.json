@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && nodemon index.js",
+    "client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.12"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "react-icons": "^5.5.0"
+  }
+}

@@ -1,0 +1,261 @@
+.about-section-wrapper {
+ background: radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(174, 198, 255, 0.15), transparent 60%),
+              linear-gradient(90deg, var(--accent),var(--accent));
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 80px; /* enough so navbar doesn’t overlap */
+}
+.about-section {
+  background-color: var(--light-1);
+  padding: 6rem 3rem 2rem;
+  color: var(--primary-dark);
+  font-family: var(--font-body);
+  scroll-margin-top: 100px;
+  border: 3px solid var(--primary-dark);
+  border-radius: 30px;
+  margin: 100px 250px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Liquid Shapes Wrapper and Shapes remain unchanged */
+/* 🔷 Liquid Shapes Wrapper */
+.about-liquid-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* ensures all shapes stay within */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* 🔷 Liquid Shapes */
+.shape {
+  position: absolute;
+  border-radius: 50% 50% 60% 40% / 50% 60% 40% 50%;
+  opacity: 0.25;
+  z-index: -1;
+  /* Remove blur */
+}
+
+/* 🔷 Customize with your palette */
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--lipstick-tone), var(--accent));
+  top: 0;
+  left: 0;
+}
+
+.shape-2 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+  top: -150px;
+  right: -100px;
+  opacity: 0.15;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, var(--accent), var(--soft-white));
+  bottom: -20px;
+  left: 80px;
+  opacity: 0.2;
+}
+/* Heading */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.about-heading::after {
+  content: '';
+  display: block;
+  width: 180px;
+  height: 4px;
+  margin: 0.5rem auto 0;
+  background: linear-gradient(90deg, var(--lipstick-tone), var(--accent), var(--secondary-dark));
+  border-radius: 3px;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  color: var(--secondary-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Box container */
+.about-box-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Description */
+.description-box {
+  position: relative;
+  width: 100%;
+  background: rgba(233, 232, 235, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 15px;
+  border: 2px solid var(--accent);
+  padding: 1.5rem;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(180, 184, 171, 0.3),
+              0 0 25px rgba(180, 184, 171, 0.2);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.description-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lipstick-tone), var(--accent), var(--secondary-dark));
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.description-box p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+/* About Details Grid */
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(180, 184, 171, 0.3),
+              0 0 25px rgba(180, 184, 171, 0.2);
+  padding: 1rem;
+  position: relative;
+}
+
+.about-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lipstick-tone), var(--accent), var(--secondary-dark));
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.about-details div {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.about-details .label {
+  color: var(--secondary-dark);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 5rem 2rem;
+    margin: 30px 15px;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+/* Mobile Landscape & Portrait */
+@media (max-width: 768px) {
+  .about-section-wrapper{
+    margin-bottom: -15px;
+  }
+  .about-section {
+    padding: 4rem 1.5rem;
+    margin: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .about-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description-box {
+    padding: 1rem;
+  }
+
+  .about-details div {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 1rem;
+    margin: 15px 5px;
+  }
+
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .description-box p {
+    font-size: 0.9rem;
+  }
+
+  .about-details {
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .about-details div {
+    font-size: 0.85rem;
+  }
+}

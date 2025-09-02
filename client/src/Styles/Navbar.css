@@ -1,0 +1,218 @@
+/* NAVBAR BASE */
+.navbar {
+  display: flex;
+  justify-content: center; /* Center all nav items */
+  align-items: center;
+  position: fixed; /* Now fixed */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: rgba(88, 81, 99, 0.1); /* Transparent glass effect */
+  backdrop-filter: blur(6px);
+}
+
+/* Ensure content below doesn't hide under navbar */
+body {
+  padding-top: 75px; /* Equal to navbar height */
+}
+
+/* Gradient border bottom */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--lipstick-tone) 20%,
+    var(--accent) 50%,
+    var(--secondary-dark) 80%,
+    transparent 100%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* LOGO + NAME */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: auto; /* Keep logo on left, nav links centered */
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Rounded logo shape */
+  border: 0.1rem solid var(--primary-dark); /* Border color */
+}
+
+.nav-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.2rem 0.6rem;
+  background: linear-gradient(
+    to right,
+    var(--primary-dark),
+    var(--lipstick-tone)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-name-highlight {
+  color: var(--lipstick-tone);
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 20px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link-text {
+  position: relative;
+  z-index: 1;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* Hover underline effect */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-dark), var(--accent));
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* CONTACT LINK + ICON */
+.contact-link {
+  font-size: 20px;
+  position: relative;
+  padding: 0px 0;
+}
+
+.contact-link-text::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+/* HAMBURGER ICON (Mobile) */
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  justify-content: space-between;
+  z-index: 1100;
+}
+
+.hamburger-icon .bar {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--secondary-dark), var(--accent));
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+  }
+  .navbar {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: -2px;
+    right: -60%;
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    transform: translateX(0);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+  }
+  /* Active menu item underline */
+.nav-links li .active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-dark), var(--accent));
+}
+
+/* Contact-specific style */
+.contact-link-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-dark);
+}
+
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 160px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(206, 207, 208, 0.3);
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,154 @@
+.experience-section {
+  padding: 5rem 2rem;
+ background: radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(174, 198, 255, 0.15), transparent 60%),
+              linear-gradient(135deg, var(--accent), var(--accent));
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--soft-white);
+  font-family: var(--font-body);
+}
+
+.experience-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.experience-heading::after {
+  content: '';
+  display: block;
+  width: 220px;
+  height: 4px;
+  margin: 0.5rem auto 0;
+  background: linear-gradient(90deg, var(--primary-dark),  var(--lipstick-tone));
+  border-radius: 2px;
+}
+
+.experience-container {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.experience-column {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.column-heading {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  color: var(--primary-dark);
+  margin-left: 35px;
+  font-weight: 600;
+}
+
+.column-heading::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin-top: 0.3rem;
+  background: linear-gradient(90deg,var(--primary-dark),  var(--lipstick-tone));
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 35px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-dark), var(--primary-dark));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to right, var(--primary-dark), var(--primary-dark));
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.experience-card {
+  background: var(--primary-dark);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.experience-card h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  color: var(--lipstick-tone);
+  font-weight: 700;
+}
+
+.company {
+  display: block;
+  font-size: 1rem;
+ color: var(--soft-white);
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.duration {
+  display: block;
+  font-size: 1rem;
+  color: var(--soft-white);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.experience-card ul,
+.experience-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+.experience-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-line {
+    left: 10px;
+  }
+
+  .timeline-dot {
+    left: -18px;
+  }
+}
